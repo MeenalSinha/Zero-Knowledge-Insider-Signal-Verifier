@@ -1,0 +1,55 @@
+{
+  "signal_id": "0x1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "signal_type": "INSIDER_SELLING",
+  "company": {
+    "name": "TechCorp Inc.",
+    "symbol": "TECH",
+    "cik": "0001234567"
+  },
+  "filing": {
+    "hash": "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "ipfs_hash": "QmTzQ1JRkWErjk39mryYw2WVaphAZNAREyMchXzYMKhDS2",
+    "filing_date": "2025-01-15",
+    "filing_type": "Form 4"
+  },
+  "analysis": {
+    "percentage_sold": 42.9,
+    "effective_percentage": 64.35,
+    "threshold": 40.0,
+    "threshold_exceeded": true,
+    "confidence": 0.87
+  },
+  "insider_details": {
+    "num_unique_insiders": 1,
+    "insiders": [
+      {
+        "name": "John Doe",
+        "title": "Chief Executive Officer",
+        "shares_sold": 150000,
+        "shares_owned_after": 200000,
+        "transaction_date": "2025-01-15"
+      }
+    ],
+    "roles": ["Chief Executive Officer"],
+    "role_multiplier": 1.5,
+    "time_clustered": false
+  },
+  "proof": {
+    "verified": true,
+    "timestamp": "2025-01-16T10:30:00Z",
+    "status": "FINALIZED"
+  },
+  "researcher": {
+    "address": "0x742d35Cc6634C0532925a3b844Bc9e7595f0e4f",
+    "reputation": 850,
+    "signals_submitted": 15,
+    "accuracy": 0.93
+  },
+  "metadata": {
+    "created_at": "2025-01-16T10:30:00Z",
+    "verified_at": "2025-01-16T10:30:05Z",
+    "finalized_at": "2025-01-16T10:30:06Z",
+    "network": "sepolia",
+    "block_number": 5234567
+  }
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ownershipDocument>
+    <schemaVersion>X0306</schemaVersion>
+    <documentType>4</documentType>
+    <periodOfReport>2025-01-15</periodOfReport>
+    
+    <issuer>
+        <issuerCik>0001234567</issuerCik>
+        <issuerName>TechCorp Inc.</issuerName>
+        <issuerTradingSymbol>TECH</issuerTradingSymbol>
+    </issuer>
+    
+    <reportingOwner>
+        <reportingOwnerId>
+            <rptOwnerCik>0001111111</rptOwnerCik>
+            <rptOwnerName>John Doe</rptOwnerName>
+        </reportingOwnerId>
+        <reportingOwnerAddress>
+            <rptOwnerStreet1>123 Executive Ave</rptOwnerStreet1>
+            <rptOwnerCity>San Francisco</rptOwnerCity>
+            <rptOwnerState>CA</rptOwnerState>
+            <rptOwnerZipCode>94105</rptOwnerZipCode>
+        </reportingOwnerAddress>
+        <reportingOwnerRelationship>
+            <isDirector>1</isDirector>
+            <isOfficer>1</isOfficer>
+            <officerTitle>Chief Executive Officer</officerTitle>
+        </reportingOwnerRelationship>
+    </reportingOwner>
+    
+    <nonDerivativeTable>
+        <nonDerivativeTransaction>
+            <securityTitle>
+                <value>Common Stock</value>
+            </securityTitle>
+            <transactionDate>
+                <value>2025-01-15</value>
+            </transactionDate>
+            <transactionCoding>
+                <transactionFormType>4</transactionFormType>
+                <transactionCode>S</transactionCode>
+                <equitySwapInvolved>0</equitySwapInvolved>
+            </transactionCoding>
+            <transactionAmounts>
+                <transactionShares>
+                    <value>150000</value>
+                </transactionShares>
+                <transactionPricePerShare>
+                    <value>125.50</value>
+                </transactionPricePerShare>
+                <transactionAcquiredDisposedCode>
+                    <value>D</value>
+                </transactionAcquiredDisposedCode>
+            </transactionAmounts>
+            <postTransactionAmounts>
+                <sharesOwnedFollowingTransaction>
+                    <value>200000</value>
+                </sharesOwnedFollowingTransaction>
+            </postTransactionAmounts>
+            <ownershipNature>
+                <directOrIndirectOwnership>
+                    <value>D</value>
+                </directOrIndirectOwnership>
+            </ownershipNature>
+        </nonDerivativeTransaction>
+    </nonDerivativeTable>
+    
+    <footnotes>
+        <footnote id="F1">Sale pursuant to Rule 10b5-1 trading plan adopted on 2024-06-15.</footnote>
+    </footnotes>
+    
+    <remarks></remarks>
+    
+    <ownerSignature>
+        <signatureName>John Doe</signatureName>
+        <signatureDate>2025-01-16</signatureDate>
+    </ownerSignature>
+</ownershipDocument>

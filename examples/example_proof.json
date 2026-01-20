@@ -1,0 +1,59 @@
+{
+  "proof": {
+    "pi_a": [
+      "0x1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890",
+      "0x234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef12"
+    ],
+    "pi_b": [
+      [
+        "0x34567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234",
+        "0x4567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef12345"
+      ],
+      [
+        "0x567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456",
+        "0x67890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567"
+      ]
+    ],
+    "pi_c": [
+      "0x7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef12345678",
+      "0x890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456789"
+    ],
+    "protocol": "groth16",
+    "curve": "bn128"
+  },
+  "publicSignals": [
+    "12345678901234567890123456789012345678901234567890123456789012345",
+    "40"
+  ],
+  "input": {
+    "filingHash": "12345678901234567890123456789012345678901234567890123456789012345",
+    "threshold": 40,
+    "totalShares_private": 350000,
+    "sharesSold_private": 150000,
+    "salt_private": "98765432109876543210987654321098765432109876543210987654321098765"
+  },
+  "metadata": {
+    "circuit": "insider_selling.circom",
+    "proving_system": "Groth16",
+    "curve": "BN254",
+    "constraints": 1247,
+    "proof_size_bytes": 192,
+    "verification_time_ms": 5,
+    "generation_time_ms": 2134,
+    "generated_at": "2025-01-16T10:29:58Z"
+  },
+  "verification": {
+    "valid": true,
+    "verified_at": "2025-01-16T10:30:05Z",
+    "verifier_contract": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "network": "sepolia",
+    "transaction_hash": "0xabc123def456789012345678901234567890abcdef1234567890abcdef123456"
+  },
+  "security": {
+    "field_modulus": "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+    "security_level_bits": 128,
+    "soundness_error": "2^-128",
+    "zero_knowledge": true,
+    "trusted_setup": "Hermez Powers of Tau Ceremony (300+ participants)"
+  }
+}
