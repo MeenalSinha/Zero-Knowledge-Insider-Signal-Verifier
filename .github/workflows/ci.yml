@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test-contracts:
+    name: Contract Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Compile contracts
+        run: npx hardhat compile
+      
+      - name: Run contract tests
+        run: npx hardhat test
+        continue-on-error: false
+
+  check-structure:
+    name: Project Structure
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Verify directory structure
+        run: |
+          echo "Checking project structure..."
+          test -d contracts || (echo "❌ contracts/ missing" && exit 1)
+          test -d backend || (echo "❌ backend/ missing" && exit 1)
+          test -d frontend || (echo "❌ frontend/ missing" && exit 1)
+          test -d circuits || (echo "❌ circuits/ missing" && exit 1)
+          test -d docs || (echo "❌ docs/ missing" && exit 1)
+          test -d examples || (echo "❌ examples/ missing" && exit 1)
+          echo "✅ All directories present"
+      
+      - name: Verify critical files
+        run: |
+          echo "Checking critical files..."
+          test -f README.md || (echo "❌ README.md missing" && exit 1)
+          test -f package.json || (echo "❌ package.json missing" && exit 1)
+          test -f hardhat.config.js || (echo "❌ hardhat.config.js missing" && exit 1)
+          test -f contracts/InsiderSignalVerifier.sol || (echo "❌ InsiderSignalVerifier.sol missing" && exit 1)
+          test -f contracts/ReputationNFT.sol || (echo "❌ ReputationNFT.sol missing" && exit 1)
+          echo "✅ All critical files present"
+      
+      - name: Check documentation
+        run: |
+          echo "Checking documentation..."
+          test -f docs/SETUP.md || echo "⚠️ SETUP.md missing"
+          test -f docs/ARCHITECTURE.md || echo "⚠️ ARCHITECTURE.md missing"
+          test -f docs/THREAT_MODEL.md || echo "⚠️ THREAT_MODEL.md missing"
+          test -f examples/README.md || echo "⚠️ examples/README.md missing"
+          echo "✅ Documentation check complete"
+
+  validate-configs:
+    name: Configuration Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Validate package.json
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('package.json'))"
+          echo "✅ package.json is valid JSON"
+      
+      - name: Validate hardhat.config.js
+        run: |
+          node -e "require('./hardhat.config.js')"
+          echo "✅ hardhat.config.js is valid"
+      
+      - name: Check for common issues
+        run: |
+          echo "Checking for common issues..."
+          ! grep -r "TODO" contracts/ && echo "✅ No TODOs in contracts" || echo "⚠️ TODOs found in contracts"
+          ! grep -r "FIXME" contracts/ && echo "✅ No FIXMEs in contracts" || echo "⚠️ FIXMEs found in contracts"
+          echo "✅ Basic checks passed"
